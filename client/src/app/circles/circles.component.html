@@ -1,0 +1,9 @@
+<div style="width:100%; text-align: center;">
+    <h2>Exercise</h2>
+</div>
+
+<div style="width:100%; text-align: center;">  
+    <div *ngFor="let color of _colors;">
+      <div class="{{color.Name | lowercase}}">{{color.Name}} </div>
+    </div>
+</div>

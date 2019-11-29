@@ -1,0 +1,40 @@
+
+
+    .green
+    {
+        margin-left: 47%;
+        width:100px;
+        height:100px;
+        border-radius:50px;
+        font-size:25px;
+        color:black;
+        line-height:100px;
+        text-align:center;
+        background:#008000;
+    }
+
+    .yellow
+    {
+        margin-left: 47%;
+        width:100px;
+        height:100px;
+        border-radius:50px;
+        font-size:25px;
+        color:black;
+        line-height:100px;
+        text-align:center;
+        background:#FFFF00;
+    }
+    
+    .red
+    {
+        margin-left: 47%;
+        width:100px;
+        height:100px;
+        border-radius:50px;
+        font-size:25px;
+        color:black;
+        line-height:100px;
+        text-align:center;
+        background:#FF0000;
+    }
