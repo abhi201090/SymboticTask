@@ -13,12 +13,7 @@ export class CirclesComponent implements OnInit {
 
   ngOnInit() {
 
-
-      this._signalRService.connectionEstablished.subscribe(() => {  
-        //Do something when connection is established        
-      });  
-
-      this._signalRService.messageReceived.subscribe((message: any) => {  
+      this._signalRService._messageReceived.subscribe((message: any) => {  
       
         this._ngZone.run(() => {  
             this._colors.push(message);            
