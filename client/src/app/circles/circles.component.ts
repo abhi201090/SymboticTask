@@ -1,5 +1,5 @@
 import { Component, OnInit,NgZone } from '@angular/core';
-import { ColorService} from '../color.service';
+import { SignalRService } from '../signal-r.service';
 
 @Component({
   selector: 'app-circles',
@@ -9,13 +9,21 @@ import { ColorService} from '../color.service';
 export class CirclesComponent implements OnInit {
   
   private _colors:any[] =[];
-  constructor(private _colorService: ColorService) { }
+  constructor(private _signalRService: SignalRService, private _ngZone: NgZone) { }
 
   ngOnInit() {
-      this._colorService.getServerSentEvent("http://localhost:57034/api/SSE/Color").subscribe(message => {
-          this._colors.push(JSON.parse(message.data));
-        }
-      );
+
+
+      this._signalRService.connectionEstablished.subscribe(() => {  
+        //Do something when connection is established        
+      });  
+
+      this._signalRService.messageReceived.subscribe((message: any) => {  
+      
+        this._ngZone.run(() => {  
+            this._colors.push(message);            
+        });  
+    }); 
   }
 
 }
